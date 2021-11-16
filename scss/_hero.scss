@@ -1,0 +1,71 @@
+@use 'variables' as *;
+@use 'animations' as *;
+@use 'mixins' as *;
+
+
+
+.hero{
+  overflow-x: hidden;
+  position: relative;
+
+  &-content{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+
+    @include breakpoints-up(large){
+      background-color: $darkViolet;
+      flex-direction:row;
+    }
+  }
+
+  &-img{
+    position: relative;
+
+    @include breakpoints-up(large){
+      order:2;
+      margin-top: 70px;
+      margin-right: 90px;
+      margin-bottom: -210px;
+    }
+  }
+  &-text{
+    margin-top: -8px;
+    padding-bottom: 100px;
+    background-color: $darkViolet;
+      text-align: center;
+
+      @include breakpoints-up(large){
+      width: 60%;
+      text-align: left;
+      margin-top: 40px;
+    }
+      p{
+        line-height: 1.9;
+      }
+  }
+  .lines{
+    position: absolute;
+  }
+  .left-lines{
+    top: 18%;
+
+    @include breakpoints-up(large){
+      top: 76%;
+        width: 10%;
+    }
+  }
+  .right-lines{
+     top: 85%;
+     left: 61%;
+     width: 71%;
+
+    @include breakpoints-up(large){
+      top:1%;
+      left: 75%;
+      width: 27%;
+      z-index: 1;
+    }
+  }
+}
