@@ -1,0 +1,100 @@
+@use 'variables' as *;
+@use 'animations' as *;
+@use 'mixins' as *;
+
+
+
+.footer{
+
+  background-color:$veryLightGray;
+  text-align: center;
+  text-transform: uppercase;
+
+  @include breakpoints-up(large){
+    margin-top: 90px;
+  }
+
+  &-logo {
+    margin-bottom: 30px;
+  }
+  &-logo img{
+     margin-top: 7px;
+       height: 24px;
+  }
+  &-flex{
+
+    margin: 30px auto;
+    
+    @include breakpoints-up(large){
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+
+  &-grid{
+    display: block;
+    text-align: center;
+
+    @include breakpoints-up(large){
+      margin-top: 60px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: 1fr;
+      gap: 100px ;
+      grid-auto-flow: row;
+      grid-template-areas:
+         "link1  link2 link3 link4 .";
+      text-align: left;
+      }
+    }
+
+  .links{
+    margin: 20px 0px 60px;
+  }
+   
+  &-link1{
+    grid-area: link1;
+  }
+  &-link2{
+    grid-area: link2;
+  }
+  &-link3{
+    grid-area: link3;
+  }
+  &-link4{
+    grid-area: link4;
+  }
+  &-sitemap-title{
+    margin-bottom: 30px;
+    color:$darkGrayishViolet;
+  }
+
+  .socials{
+    a{
+      display: inline-block;
+      height: 20px;     
+    }
+    path{
+      transition: fill 300ms ease-in-out;
+    }
+    path:hover{
+      fill: $darkViolet;
+    }
+
+    a:not(:last-child){
+      margin-right: 1rem;
+    }
+  }
+
+  .sitemap {
+    display: block;
+    margin-bottom: 10px;
+    color:$darkViolet;
+    font-weight:700;
+
+    &:hover{
+      text-decoration: underline;
+    }
+  }
+}

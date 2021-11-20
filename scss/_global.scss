@@ -1,0 +1,172 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+html{
+  font-size: 100%;
+  border-box: box-sizing;
+}
+
+*, *::before, *::after{
+  box-sizing: inherit;
+}
+
+body{
+  margin: 0;
+  padding: 0;
+  font-family: 'Karla', sans-serif;
+  font-size: 1rem;
+  font-weight: 300;
+  color: $veryDarkViolet; 
+  line-height: 1.3;  
+  overflow-x: hidden;
+
+  &.noscroll{
+    overflow: hidden;
+  }
+}
+
+a, a:visited, a:hover{
+  text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6{
+font-family: 'DM Serif Display', serif;
+  
+}
+h1{
+  font-size: 2.8125rem;
+  color: $white;
+
+  @include breakpoints-up(large){
+    font-size: 3.375rem;
+  }
+
+  &::before{
+      @include breakpoints-up(large){
+      content: "";
+        width: 10rem;
+        height: 0.1rem;
+        display: block;
+        background-color: $darkGrayishViolet;
+        margin-bottom: 40px;
+      }
+      }
+}
+
+h2{
+  font-size: 2.3rem;
+  color: $white;
+  margin-bottom: 36px;
+
+  @include breakpoints-up(large){
+    margin-bottom: 36px;
+    font-size: 2.5rem;
+  }
+}
+h3{
+  margin-bottom: 25px;
+  font-size: 1.5625rem;
+
+  @include breakpoints-up(large){
+    margin-bottom: 36px;
+    font-size: 1.6275rem;
+    
+  }
+}
+h4{
+  margin-bottom: 25px;
+  font-size: 1.25rem;
+
+  @include breakpoints-up(large){
+    margin-bottom: 36px;
+    font-size: 1.375rem;
+    
+  }
+}
+
+p{
+  margin-bottom: 36px;
+  line-height: 1.5;
+  font-size: 1rem;
+  color: $white;
+
+  @include breakpoints-up(medium){
+    font-size: 1.125rem;
+  }
+  
+}
+img{
+  max-width:100%;
+  height:auto;
+}
+hr{
+  border: 1px solid $darkGrayishViolet;
+  width: 100%;
+}
+
+main{
+  @include breakpoints-down(medium){
+    overflow-x: hidden;
+  }
+}
+//CONTAINER SPACING
+.con{
+   max-width: 1440px;
+   margin: 0 auto;
+
+    &-pad{
+      padding: 22px 30px;
+
+      @include breakpoints-up(large){
+        padding: 22px 100px;
+      }
+    }
+}
+// CONTAINER FLEXBOX
+.conflex{
+  display: flex;
+
+  &-jc-sb{
+    justify-content: space-between;
+  }
+  &-jc-c{
+    justify-content: center;
+  }
+  &-ai-c{
+    align-content: center;
+  }
+}
+
+ .button{
+  display: inline-block;
+  background-color: $darkViolet;
+  padding: 18px 28px;
+  color: $white;
+  font-family: 'Fraunces', serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  cursor: pointer;
+  border-color: $white;
+
+  &:hover{
+    background-color: $white;
+    color: $darkViolet;
+
+  }
+  &::after{
+    color: white;
+  }
+}
+
+// hide for small devices (mobile and tablet)
+.mob-hide{
+  @include breakpoints-down(medium){
+    display: none;
+  }
+}
+// hide for large devices and up 
+.pc-hide{
+  @include breakpoints-up(large){
+    display: none;
+  }
+}

@@ -1,0 +1,80 @@
+@use 'variables' as *;
+@use 'animations' as *;
+@use 'mixins' as *;
+
+
+
+.hero{
+  position: relative;
+
+
+  &-content{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+
+
+    @include breakpoints-up(large){
+      background-color: $darkViolet;
+      flex-direction:row;
+    }
+  }
+
+  &-img{
+    position: relative;
+
+    @include breakpoints-up(large){
+      order:2;
+      margin-top: 70px;
+      margin-bottom: -90px;
+      width: 50%;
+    }
+  }
+  &-text{
+    margin-top: -8px;
+    background-color: $darkViolet;
+    text-align: center;
+
+    padding: 0 20px 40px;
+
+      @include breakpoints-up(large){
+      width: 50%;
+      text-align: left;
+      margin-top: 40px;
+      margin-right: 60px;
+      padding-left: 60px;
+    }
+      p{
+        line-height: 1.9;
+      }
+  }
+  .lines{
+    position: absolute;
+    margin: 0 auto;
+  }
+  .left-lines{
+        top:18%;
+
+    @include breakpoints-up(medium){
+      top: 38%;
+    }
+
+    @include breakpoints-up(large){
+      top: 76%;
+      width: 10%;
+    }
+  }
+  .right-lines{
+     top: 85%;
+     left: 61%;
+     width: 71%;
+
+    @include breakpoints-up(large){
+      top:1%;
+      left: 75%;
+      width: 27%;
+      z-index: 1;
+    }
+  }
+}
