@@ -32,8 +32,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Insure solution](https://your-solution-url.com)
-- Live Site URL: [Insure live site](https://your-live-site-url.com)
+- Solution URL: [Insure solution](https://github.com/erickamae-mateo/insure-landing-page)
+- Live Site URL: [Insure live site](hhttps://erickamae-mateo.github.io/insure-landing-page/)
 
 ## My process
 
